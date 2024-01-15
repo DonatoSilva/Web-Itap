@@ -1,10 +1,11 @@
 ---
 interface Props {
     title: string
+    center?: boolean
 }
 
-const {title} = Astro.props
+const {title, center = true} = Astro.props
 ---
-<h2 class="font-bold text-2xl text-center md:text-left">
+<h2 class={`font-bold text-2xl ${center ? 'text-center md:text-left' : 'text-left'}`}>
     {title}
 </h2>

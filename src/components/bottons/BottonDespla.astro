@@ -20,11 +20,10 @@ if (direction.length > 3) {
 ---
 
 <button
-    class="p-3 bg-[#358d36] text-white rounded-full border mx-0.5 my-auto cursor-pointer"
+    class={`${valorDirection} p-3 bg-[#358d36] text-white rounded-full border mx-0.5 my-auto cursor-pointer`}
     title={`${title}`}
 >
     <svg
-        class={valorDirection}
         width="16"
         height="16"
         fill="currentColor"
@@ -36,3 +35,21 @@ if (direction.length > 3) {
         ></path>
     </svg>
 </button>
+
+<style>
+    button:hover > svg {
+        animation: moveFlow 0.45s both infinite;
+    }
+
+    @keyframes moveFlow {
+        0% {
+            transform: translateX(0px);
+        }
+        50% {
+            transform: translateX(-2px);
+        }
+        100% {
+            transform: translateX(0px);
+        }
+    }
+</style>
