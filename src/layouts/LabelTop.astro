@@ -1,0 +1,16 @@
+---
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+---
+<div class="w-full py-1 text-center text-white">
+    <p class="text-sm">{text}</p>
+</div>
+
+<style>
+    div {
+        background-color: #358d36;
+    }
+</style>

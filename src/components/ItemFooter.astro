@@ -1,0 +1,15 @@
+---
+interface Props {
+	name: string;
+    flexCol?: boolean;
+}
+
+const { name, flexCol=true } = Astro.props;
+---
+
+<div class="flex flex-1 flex-col mx-auto">
+    <h1 class="text-base font-bold mb-1 ">{name}</h1>
+    <div class={`flex gap-1 ${flexCol == true ? 'flex-col' : 'flex-row'} px-2`}>
+        <slot />
+    </div>
+</div>

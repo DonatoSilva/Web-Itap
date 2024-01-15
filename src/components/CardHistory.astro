@@ -1,0 +1,45 @@
+---
+interface Props {
+    fecha, title: string;
+    color?: string;
+}
+
+const { fecha, title, color="bg-[#358d36]"  } = Astro.props;
+---
+
+<li class="flex-1 min-w-[450px]">
+    <div class="flex flex-col items-center md:items-start">
+        <div
+            class={color + " w-10 h-10 rounded-full flex items-center justify-center text-white shadow-lg z-10 mt-3"}
+        >
+        <slot name="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+            </svg>
+        </slot>
+        </div>
+        <div class="md:-mt-2 md:ml-6 text-center md:text-left border py-2 px-3 rounded-lg">
+            <time class="text-sm text-gray-400">{fecha}</time>
+            <h3 class="text-lg font-semibold text-gray-800">
+                {title}
+            </h3>
+            <p class="text-gray-600">
+                <slot/>
+            </p>
+        </div>
+    </div>
+</li> 
+
+<style>
+    li {
+		view-timeline-name: --section;
+		view-timeline-axis: block;
+
+		animation-timeline: --section;
+		animation-name: animateShow;
+
+		animation-range: entry 5% cover 20%;
+		animation-fill-mode: both;
+        animation-timing-function: ease-out;
+	}
+</style>

@@ -1,0 +1,17 @@
+<section class={`container max-w-7xl mx-auto px-4 py-4 ${Astro.props.class}`}>
+	<slot />
+</section>
+
+<style>
+	section {
+		view-timeline-name: --section;
+		view-timeline-axis: block;
+
+		animation-timeline: --section;
+		animation-name: animateShow;
+
+		animation-range: entry 5% cover 20%;
+		animation-fill-mode: both;
+		animation-timing-function: ease-out;
+	}
+</style>

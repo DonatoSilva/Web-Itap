@@ -1,0 +1,63 @@
+---
+import ItemFooter from "../components/ItemFooter.astro";
+import Logo from "../components/Logo.astro";
+// Obtiene la fecha actual
+var fechaActual = new Date();
+
+// Extrae los componentes de la fecha (año, mes, día)
+var año = fechaActual.getFullYear();
+---
+<footer class="py-4 mt-10 text-white px-4">
+    <div class="container max-w-screen-xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between gap-3 lg:gap-40">
+            <div class="flex-1 min-w-[150px] max-w-[250px] mx-auto md:mx-0">
+                <div class="flex justify-center md:justify-normal">
+                    <Logo color="text-white mb-1"/>
+                </div>
+                <p class="text-sm font-light text-center md:text-left">Formando personas integrales, competentes y comprometidas con el desarrollo social y cultural de Barichara.</p>
+                
+                <div class="text-sm mt-2 font-semibold md:text-left text-center">© Derechos de autor reservados {año}</div>
+            </div>
+            <div class="flex justify-around flex-1  min-w-[150px] gap-2">
+                <ItemFooter name="Teléfonos:">
+                    <span class="text-xs flex flex-col"><b class="text-sm">Sede 1: </b> Tel. 7267023 – 7267001</span>
+                    <span class="text-xs flex flex-col"><b class="text-sm">Sede 2: </b> Tel. 7267151</span>
+                    <span class="text-xs flex flex-col"><b class="text-sm">Escuela Sagrada Familia: </b>Tel. 7267424</span>
+                </ItemFooter>
+                <ItemFooter name="Direcciones:">
+                    <span class="text-xs flex flex-col"><b class="text-sm">Sede 1: </b> Carrera 6 No. 5 - 14</span>
+                    <span class="text-xs flex flex-col"><b class="text-sm">Sede 2: </b> Carrera 6 No. 3 - 98</span>
+                    <span class="text-xs flex flex-col"><b class="text-sm">Escuela Sagrada Familia: </b> Calle 7 Carrera 11 esq.</span>
+                </ItemFooter>
+                <ItemFooter name="Redes sociales:">
+                    <a class="flex gap-2" href="https://www.facebook.com/InstitutoTecnicoBarichara" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0,0,256,256">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM37,19h-2c-2.14,0 -3,0.5 -3,2v3h5l-1,5h-4v15h-5v-15h-4v-5h4v-3c0,-4 2,-7 6,-7c2.9,0 4,1 4,1z"></path></g></g>
+                        </svg> Facebook
+                    </a>
+                    <a class="flex gap-2" href="https://www.instagram.com/itap.barichara/" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0,0,256,256">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M16,3c-7.17,0 -13,5.83 -13,13v18c0,7.17 5.83,13 13,13h18c7.17,0 13,-5.83 13,-13v-18c0,-7.17 -5.83,-13 -13,-13zM37,11c1.1,0 2,0.9 2,2c0,1.1 -0.9,2 -2,2c-1.1,0 -2,-0.9 -2,-2c0,-1.1 0.9,-2 2,-2zM25,14c6.07,0 11,4.93 11,11c0,6.07 -4.93,11 -11,11c-6.07,0 -11,-4.93 -11,-11c0,-6.07 4.93,-11 11,-11zM25,16c-4.96,0 -9,4.04 -9,9c0,4.96 4.04,9 9,9c4.96,0 9,-4.04 9,-9c0,-4.96 -4.04,-9 -9,-9z"></path></g></g>
+                            </svg> Instaram
+                    </a>
+                </ItemFooter>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+    footer {
+        color: white;
+        background-color: #358d36;
+    }
+
+    a svg {
+        color: white;
+        width: 25px;
+        transition: all 200ms ease-in-out;
+    }
+
+    a:hover svg {
+        transform: scale(1.2);
+    }
+</style>

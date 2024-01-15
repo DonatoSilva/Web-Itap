@@ -1,0 +1,96 @@
+---
+interface Props {
+    description: string;
+    title: string;
+    url1: string;
+    url2: string;
+    url3: string;
+}
+
+const { description, title,  url1, url2, url3  } = Astro.props;
+---
+<div class="banner relative text-center px-4 py-8">
+    <div class="ball-1 w-6 h-6 absolute rounded-full"></div>
+    <div class="ball-2 w-8 h-8 absolute rounded-full"></div>
+    <div class="ball-3 w-6 h-6 absolute rounded-full"></div>
+    <div class="ball-4 w-6 h-6 absolute rounded-full"></div>
+    <div class="ball-5 w-6 h-6 absolute rounded-full"></div>
+    <div class="ball-6 w-6 h-6 absolute rounded-full"></div>
+    <div class="ball-7 w-6 h-6 absolute rounded-full"></div>
+
+    <h1 class="text-5xl font-bold mb-6">{title}</h1>
+    <p class="text-lg max-w-md mx-auto">{description}</p>
+
+    <div class="flex mx-5 my-6 justify-around">
+        <img
+            src={url1}
+            alt="imagen del Itap"
+            class="hidden md:block flex-1 object-cover max-w-[300px] rounded-e-full"
+        />
+        <img
+            src={url2}
+            alt="imagen del Itap"
+            class="flex-1 max-w-[300px] rounded-b-full rounded-t-full object-cover"
+        />
+        <img
+            src={url3}
+            alt="imagen del Itap"
+            class="hidden md:block object-cover flex-1 max-w-[300px] rounded-s-full rounded-e-2xl"
+        />
+    </div>
+</div>
+
+<style>
+    .banner {
+        min-height: 500px;
+    }
+
+    .ball-1 {
+        top: 5%;
+        left: 350px;
+        background-color: #358d36;
+        z-index: -10;
+    }
+
+    .ball-2 {
+        left: 80%;
+        bottom: 40px;
+        background-color: #91b7c4;
+        z-index: -10;
+    }
+
+    .ball-3 {
+        left: 50%;
+        top: 85%;
+        background-color: #e59547;
+        z-index: -10;
+    }
+
+    .ball-4 {
+        left: 40%;
+        top: 10%;
+        background-color: #1247af;
+        z-index: -10;
+    }
+
+    .ball-5 {
+        left: 30%;
+        bottom: 100px;
+        background-color: #91b7c4;
+        z-index: -10;
+    }
+
+    .ball-6 {
+        bottom: -5px;
+        left: 350px;
+        background-color: #358d36;
+        z-index: -10;
+    }
+
+    .ball-7 {
+        right: 10%;
+        top: 40px;
+        background-color: #e59547;
+        z-index: -10;
+    }
+</style>

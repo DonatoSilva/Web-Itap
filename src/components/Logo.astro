@@ -1,0 +1,19 @@
+---
+import { boolean } from 'astro/zod';
+interface Props {
+	color?: string;
+}
+
+const { color="text-black" } = Astro.props;
+---
+<!-- Logo -->
+<div class={`${color} text-xl font-bold flex items-center gap-2`}>
+    <img src="/Icono.png" alt="escudo logo">
+    ITAP.
+</div>
+
+<style>
+    img {
+        width: 35px;
+    }
+</style>

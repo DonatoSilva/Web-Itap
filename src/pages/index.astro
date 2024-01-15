@@ -1,0 +1,242 @@
+---
+import Banner from "../components/Banner.astro";
+import ItemBentto from "../components/ItemBentto.astro";
+import Intro from "../components/Intro.astro";
+import InputText from "../components/form/InputText.astro";
+import InputTextT from "../components/form/InputTextT.astro";
+import Layout from "../layouts/Layout.astro";
+import Referent from "../components/referent/Referent.astro";
+import Section from "../components/Section.astro";
+import TitleSection from "../components/TitleSection.astro";
+---
+
+<Layout
+	title="Inicio"
+	optActive="Inicio"
+	textLabelTop="Conoce sobre nuestra institucion de calidad ✨"
+>
+	<Banner
+		title="Instituto Técnico Aquileo Parra:"
+		description="Formando personas integrales, competentes y comprometidas con el desarrollo social y cultural de Barichara."
+		url1="/imagenes/Sede-1.jpg"
+		url2="/imagenes/juntos.jpg"
+		url3="/imagenes/Sede-2.jpg"
+	/>
+
+	<Section class="grid gap-3 grid-cols-10 auto-rows-[14rem]">
+		<Intro
+			title="Bienvenidos/as a la página de la Comunidad Educativa Aquileo Parra"
+			class="col-span-10 md:col-span-8 row-span-3 md:row-span-2"
+		>
+			<p class="m-auto mb-3">
+				<strong
+					>Somos una comunidad educativa con experencia que promueve
+					la calidad, la innovación y el compromiso en la formación
+					integral de nuestros estudiantes</strong
+				>. Nuestros símbolos son el himno, la bandera, el escudo y el
+				PEI, que expresan nuestra alegría, nuestra diversidad, nuestra
+				identidad y nuestra orientación como institución aquileista
+			</p>
+			<p class="m-auto mb-3">
+				Aquí podrás <strong>acceder a información</strong> sobre nuestra
+				trayectoria, nuestra propuesta educativa, nuestros logros, nuestras
+				actividades y nuestras novedades. <strong
+					>Te animamos a explorar más sobre nosotros y a unirte a
+					nuestra familia educativa</strong
+				>.
+			</p>
+		</Intro>
+		<ItemBentto
+			class="bg-white col-span-5 md:col-span-2 border rounded-md flex flex-col justify-center items-center"
+		>
+			<h2 class="font-bold text-7xl">80</h2>
+			<span class="font-light">años educando</span>
+		</ItemBentto>
+		<ItemBentto
+			class="bg-white col-span-5 md:col-span-2 border rounded-md flex flex-col justify-center items-center"
+		>
+			<h2 class="font-bold text-7xl">8</h2>
+			<span class="font-light">Sedes</span>
+			<div
+				class="text-white [&>span]:rounded-2xl [&>span]:px-2 [&>span]:py-1 flex flex-col sm:flex-row gap-1 mt-1"
+			>
+				<span class="font-extralight text-xs bg-[#358d36]"
+					>2 Urbanas</span
+				>
+				<span class="font-extralight text-xs bg-[#e59547]"
+					>6 Rurales</span
+				>
+			</div>
+		</ItemBentto>
+	</Section>
+
+	<Section>
+		<Referent>
+
+		</Referent>
+	</Section>
+
+	<Section>
+		<article class="text-white rounded-lg">
+			<div
+				class="imgGradient grid grid-cols-2 auto-rows-[100px] top-0 gap-2 rounded-lg"
+			>
+				<header class="col-span-2">
+					<TitleSection title="Contactanos:" />
+					<p class="txtContact m-auto">
+						Si deseas contactarnos, lo puedes hacer por los
+						diferentes canales de comunicacion que tenemos. Es todo
+						un gusto atender sus dudas.
+					</p>
+				</header>
+				<div
+					class="col-span-2 md:col-span-1 row-span-2 md:row-span-5 flex flex-col"
+				>
+					<iframe
+						class="w-full rounded-md flex-auto"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1341.7602414833425!2d-73.22368969859642!3d6.63536556651923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e69cf9880bd04cd%3A0x278874b995c58d15!2sInstituto%20T%C3%A9cnico%20Aquileo%20Parra%2C%20Sede%202.!5e0!3m2!1ses!2sco!4v1705082250222!5m2!1ses!2sco"
+						style="border:0;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<div class="w-full m-2">
+						<h4 class="font-semibold">Horarios de atención:</h4>
+						<p>Servicio de 7:30 am a 7:00 pm de Lunes a Viernes</p>
+					</div>
+				</div>
+				<form
+					action=""
+					class="col-span-2 md:col-span-1 row-start-2 md:col-start-2 row-span-5 flex flex-col gap-1.5 px-1"
+				>
+					<InputText title="Nombre Completo:" type="text" id="Name"/>
+					<InputText title="Correo:" type="email" id="Email"/>
+					<InputText title="Asunto:" type="text" id="Affair"/>
+					<InputTextT title="Mensaje:" id="Message"/>
+
+					<button
+						class="bg-[#e59547] font-semibold px-4 py-2 rounded-md my-2 btnEnvia"
+						type="submit">Enviar</button
+					>
+				</form>
+			</div>
+		</article>
+	</Section>
+</Layout>
+<style>
+	p {
+		max-width: 600px;
+		text-align: left;
+		line-height: 1.4;
+		font-weight: 100;
+		font-size: 1em;
+		letter-spacing: 0.5px;
+	}
+
+	p strong {
+		color: white;
+		font-weight: 700;
+	}
+
+	.txtContact {
+		width: 100%;
+		margin: 0;
+	}
+
+	.imgGradient {
+		background: linear-gradient(
+			to bottom,
+			rgba(53, 141, 54, 0.5),
+			rgba(53, 141, 54, 0.95),
+			#358d36
+		);
+		background: -webkit-linear-gradient(
+			top,
+			rgba(53, 141, 54, 0.5),
+			rgba(53, 141, 54, 0.95),
+			#358d36
+		);
+		background: -moz-linear-gradient(
+			top,
+			rgba(53, 141, 54, 0.5),
+			rgba(53, 141, 54, 0.95),
+			#358d36
+		);
+		background: -o-linear-gradient(
+			top,
+			rgba(53, 141, 54, 0.5),
+			rgba(53, 141, 54, 0.95),
+			#358d36
+		);
+		background: linear-gradient(
+			to bottom,
+			rgba(53, 141, 54, 0.5),
+			rgba(53, 141, 54, 0.95),
+			#358d36
+		);
+
+		position: relative;
+		min-height: 100%;
+		height: min-content;
+		width: 100%;
+		padding: 10px;
+		overflow: hidden;
+	}
+
+	.imgGradient::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: url("/imagenes/FamiliaAquileista.jpg");
+		background-size: contain;
+	}
+
+	.btnEnvia {
+		transition: color;
+		transition-duration: 300ms;
+	}
+
+	.btnEnvia:hover {
+		color: #e59547;
+		background-color: #ffff;
+		border: 1.5px solid #e59547;
+	}
+
+	@media screen and (min-width: 768px) {
+		.imgGradient {
+			background: linear-gradient(
+				to right,
+				rgba(53, 141, 54, 0.5),
+				rgba(53, 141, 54, 0.95),
+				#358d36
+			);
+			background: -webkit-linear-gradient(
+				left,
+				rgba(53, 141, 54, 0.5),
+				rgba(53, 141, 54, 0.95),
+				#358d36
+			);
+			background: -moz-linear-gradient(
+				left,
+				rgba(53, 141, 54, 0.5),
+				rgba(53, 141, 54, 0.95),
+				#358d36
+			);
+			background: -o-linear-gradient(
+				left,
+				rgba(53, 141, 54, 0.5),
+				rgba(53, 141, 54, 0.95),
+				#358d36
+			);
+			background: linear-gradient(
+				to right,
+				rgba(53, 141, 54, 0.5),
+				rgba(53, 141, 54, 0.95),
+				#358d36
+			);
+		}
+	}
+</style>

@@ -1,0 +1,13 @@
+---
+interface Props {
+    title: string,
+    id: string,
+    placeholder?: string
+}
+
+const {title, id, placeholder} = Astro.props;
+---
+<label class="flex flex-col gap-0.5 overflow-hidden " for={id}>
+    {title}
+    <textarea id={id} cols="30" rows="10" class=" focus:outline-none resize-none rounded-md text-black px-2 py-1" placeholder={placeholder || ""} ></textarea>
+</label>

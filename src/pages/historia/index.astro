@@ -1,0 +1,68 @@
+---
+import Banner from "../../components/Banner.astro";
+import CardHistory from "../../components/CardHistory.astro";
+import TitleSection from "../../components/TitleSection.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+    title="Historia"
+    optActive="Historia"
+    textLabelTop="Escribiendo nuestra historia como Instituto Técnico desde 1974 👨🏻‍🏫"
+>
+    <Banner
+        title="Nuestra Historia"
+        description="Conoce la trayectoria del Instituto Técnico Aquileo Parra, una institución educativa que desde 1946 forma personas integrales en diferentes especialidades técnicas, con calidad humana, académica y espiritual."
+        url1="/imagenes/Sede-1.jpg"
+        url2="/imagenes/Estudiantes Iglecia.jpg"
+        url3="/imagenes/Danza.jpg"
+    />
+
+    <section class="container max-w-7xl mx-auto px-4 py-8">
+        <TitleSection title="RESEÑA HISTÓRICA"/>
+        <ul class="flex flex-wrap flex-col md:flex-row mt-3 gap-4">
+            <CardHistory title="Creación del Colegio Aquileo Parra" fecha="1940">
+                <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                </svg>
+                El Congreso de Colombia ordena organizar el Colegio Aquileo Parra en Barichara en homenaje al ex presidente José Bonifacio Aquileo Parra Gómez.
+            </CardHistory>
+            <CardHistory title="Inicio de la Escuela de Artes y Oficios" fecha="1946" color="bg-[#e59547]">
+                <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+                    <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+                    <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z"/>
+                </svg>
+                El colegio empieza a funcionar como una escuela de artes y oficios con 16 alumnos de nivel preparatorio y 15 de primero de bachillerato, ofreciendo talleres de talabartería, carpintería y sastrería.
+            </CardHistory>
+            <CardHistory title="Implantación del Taller de Mecánica" fecha="1949" color="bg-[#91b7c4]">
+                <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-nut-fill" viewBox="0 0 16 16">
+                    <path d="M4.58 1a1 1 0 0 0-.868.504l-3.428 6a1 1 0 0 0 0 .992l3.428 6A1 1 0 0 0 4.58 15h6.84a1 1 0 0 0 .868-.504l3.429-6a1 1 0 0 0 0-.992l-3.429-6A1 1 0 0 0 11.42 1zm5.018 9.696a3 3 0 1 1-3-5.196 3 3 0 0 1 3 5.196"/>
+                </svg>
+                Se establece el taller de mecánica y se gradúa la primera promoción de expertos en mecánica, sastrería y carpintería en 1952.
+            </CardHistory>
+            <CardHistory title="Cambio de nombre a Escuela Industrial Nacional Aquileo Parra" fecha="1958">
+                SEl plantel cambia su nombre y gradúa a los primeros expertos industriales en forjas y soldaduras, motores, mecánica y ebanistería.
+            </CardHistory>
+            <CardHistory title="Incorporación de personal femenino" fecha="1982" color="bg-[#e59547]">
+                <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-standing-dress" viewBox="0 0 16 16">
+                    <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-.5 12.25V12h1v3.25a.75.75 0 0 0 1.5 0V12h1l-1-5v-.215a.285.285 0 0 1 .56-.078l.793 2.777a.711.711 0 1 0 1.364-.405l-1.065-3.461A3 3 0 0 0 8.784 3.5H7.216a3 3 0 0 0-2.868 2.118L3.283 9.079a.711.711 0 1 0 1.365.405l.793-2.777a.285.285 0 0 1 .56.078V7l-1 5h1v3.25a.75.75 0 0 0 1.5 0Z"/>
+                </svg>
+                Se admite a las mujeres en la institución y se otorga el título de bachiller dibujante a la primera mujer en 1984.
+            </CardHistory>
+            <CardHistory title="Cambio de nombre a Instituto Técnico Industrial Aquileo Parra" fecha="1974">
+                El colegio cambia su nombre y son aprobados oficialmente los grados sexto a undécimo. Se otorga el título de bachilleres técnicos en las especialidades de mecánica industrial, metalistería y motores.
+            </CardHistory>
+            <CardHistory title="Fusión de establecimientos educativos " fecha="2000">
+                Se fusionan el Instituto Técnico Industrial Aquileo Parra, el Colegio Sagrada Familia y el Instituto de Promoción Social del municipio de Barichara, quedando el Instituto Técnico Aquileo Parra con los niveles de básica secundaria y media vocacional en las modalidades industrial, comercial y de promoción social.
+            </CardHistory>
+            <CardHistory title="Implementación de la jornada única y el bilingüismo" fecha="2015" color="bg-[#1247af]">
+                <svg slot="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wechat" viewBox="0 0 16 16">
+                    <path d="M11.176 14.429c-2.665 0-4.826-1.8-4.826-4.018 0-2.22 2.159-4.02 4.824-4.02S16 8.191 16 10.411c0 1.21-.65 2.301-1.666 3.036a.324.324 0 0 0-.12.366l.218.81a.616.616 0 0 1 .029.117.166.166 0 0 1-.162.162.177.177 0 0 1-.092-.03l-1.057-.61a.519.519 0 0 0-.256-.074.509.509 0 0 0-.142.021 5.668 5.668 0 0 1-1.576.22ZM9.064 9.542a.647.647 0 1 0 .557-1 .645.645 0 0 0-.646.647.615.615 0 0 0 .09.353Zm3.232.001a.646.646 0 1 0 .546-1 .645.645 0 0 0-.644.644.627.627 0 0 0 .098.356"/>
+                    <path d="M0 6.826c0 1.455.781 2.765 2.001 3.656a.385.385 0 0 1 .143.439l-.161.6-.1.373a.499.499 0 0 0-.032.14.192.192 0 0 0 .193.193c.039 0 .077-.01.111-.029l1.268-.733a.622.622 0 0 1 .308-.088c.058 0 .116.009.171.025a6.83 6.83 0 0 0 1.625.26 4.45 4.45 0 0 1-.177-1.251c0-2.936 2.785-5.02 5.824-5.02.05 0 .1 0 .15.002C10.587 3.429 8.392 2 5.796 2 2.596 2 0 4.16 0 6.826m4.632-1.555a.77.77 0 1 1-1.54 0 .77.77 0 0 1 1.54 0m3.875 0a.77.77 0 1 1-1.54 0 .77.77 0 0 1 1.54 0"/>
+                </svg>
+                Se implanta la jornada única en la institución y se inicia el proyecto de educación bilingüe.
+            </CardHistory>
+        </ul>
+    </section>
+</Layout>
+<style></style>
