@@ -13,7 +13,18 @@ import BottonDespla from "../bottons/BottonDespla.astro";
             <BottonDespla direction="right" title="Mover a la Der."/>
         </div>
     </header>
-    <div class="py-3 px-[10px]">
+    <div class="scroller rounded-md mt-2 pe-1">
         <slot />
     </div>
 </article>
+<style>
+    .scroller {
+		display: grid;
+		grid-gap: 16px;
+        grid-auto-columns: 380px;
+        grid-template-rows: 255px;
+		grid-auto-flow: column;
+		box-sizing: border-box;
+        overflow-x: hidden;
+	}
+</style>

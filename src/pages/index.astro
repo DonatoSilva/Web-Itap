@@ -8,6 +8,7 @@ import Layout from "../layouts/Layout.astro";
 import Referent from "../components/referent/Referent.astro";
 import Section from "../components/Section.astro";
 import TitleSection from "../components/TitleSection.astro";
+import ItemReferent from "../components/referent/ItemReferent.astro";
 ---
 
 <Layout
@@ -71,8 +72,15 @@ import TitleSection from "../components/TitleSection.astro";
 	</Section>
 
 	<Section>
-		<Referent >
-			
+		<Referent>
+			<ItemReferent />
+			<ItemReferent />
+			<ItemReferent />
+			<ItemReferent />
+			<ItemReferent />
+			<ItemReferent />
+			<ItemReferent />
+			<ItemReferent />
 		</Referent>
 	</Section>
 
@@ -108,10 +116,10 @@ import TitleSection from "../components/TitleSection.astro";
 					action=""
 					class="col-span-2 md:col-span-1 row-start-2 md:col-start-2 row-span-5 flex flex-col gap-1.5 px-1"
 				>
-					<InputText title="Nombre Completo:" type="text" id="Name"/>
-					<InputText title="Correo:" type="email" id="Email"/>
-					<InputText title="Asunto:" type="text" id="Affair"/>
-					<InputTextT title="Mensaje:" id="Message"/>
+					<InputText title="Nombre Completo:" type="text" id="Name" />
+					<InputText title="Correo:" type="email" id="Email" />
+					<InputText title="Asunto:" type="text" id="Affair" />
+					<InputTextT title="Mensaje:" id="Message" />
 
 					<button
 						class="bg-[#e59547] font-semibold px-4 py-2 rounded-md my-2 btnEnvia"
