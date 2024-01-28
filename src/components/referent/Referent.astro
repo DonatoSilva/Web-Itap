@@ -1,16 +1,17 @@
 ---
-import TitleSection from "../../components/TitleSection.astro";
+import TitleSection from "../TitleSection.astro";
 import BottonDespla from "../bottons/BottonDespla.astro";
 ---
+
 <article class="bg-white border rounded-lg p-[10px]">
     <header class="flex">
         <div class="flex-1">
             <TitleSection center={false} title="Reseñas:" />
-            <p class="text-gray-500 ">Egresados</p>
+            <p class="text-gray-500">Egresados</p>
         </div>
         <div class="flex items-center">
-            <BottonDespla title="Mover a la Izq."/>
-            <BottonDespla direction="right" title="Mover a la Der."/>
+            <BottonDespla title="Mover a la Izq." />
+            <BottonDespla direction="right" title="Mover a la Der." />
         </div>
     </header>
     <div class="scroller rounded-md mt-2 pe-1">
@@ -19,12 +20,15 @@ import BottonDespla from "../bottons/BottonDespla.astro";
 </article>
 <style>
     .scroller {
-		display: grid;
-		grid-gap: 16px;
+        display: grid;
+        grid-gap: 16px;
         grid-auto-columns: 380px;
         grid-template-rows: 255px;
-		grid-auto-flow: column;
-		box-sizing: border-box;
+        grid-auto-flow: column;
+        box-sizing: border-box;
         overflow-x: hidden;
-	}
+
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
 </style>
