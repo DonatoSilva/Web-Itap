@@ -64,18 +64,22 @@ if (direction.length > 3) {
 
     bottons.forEach((btn) => {
         const isClass = btn.classList.contains("rotate-180");
+        const width = widthItem * 2;
 
         btn.addEventListener("click", () => {
             if (isClass) {
-                if (!(carousel.scrollWidth - widthItem*2 <= carousel.scrollLeft)) {
-                    carousel.scrollBy(widthItem, 0);
-                } else {
+                carousel.scrollBy(widthItem, 0);
+
+                if (
+                    carousel.scrollWidth - width <=
+                    carousel.scrollLeft + width
+                ) {
                     carousel.scrollLeft = 0;
                 }
             } else {
+                carousel.scrollLeft = carousel.scrollWidth - widthItem;
+
                 if (!(widthItem >= carousel.scrollLeft + widthItem)) {
-                    carousel.scrollLeft = carousel.scrollWidth - widthItem;
-                } else {
                     carousel.scrollBy(-widthItem, 0);
                 }
             }
