@@ -1,6 +1,5 @@
 ---
 import Section from "../Section.astro"
-import NavHash from './NavHash.astro'
 ---
 <Section class="ViewHash">
     <slot name="nav"></slot>
@@ -11,9 +10,7 @@ import NavHash from './NavHash.astro'
 
 <style>
     #contentViewHash {
-        max-height: 500px;
         overflow: hidden;
-        overflow-y: scroll;
     }
 </style>
 
@@ -22,9 +19,10 @@ import NavHash from './NavHash.astro'
         display: block;
         color: black;
         width: 100%;
-        margin: 4px 0;
-        border-bottom: 0.5px solid transparent;
-        transition: border-bottom color 300ms ease-in-out;
+        margin: 3px 0;
+        padding: 5px 0;
+        border-bottom: 0.5px solid #cecece;      
+        transition: border-bottom 300ms ease-in-out;
     }
 
     .ViewHash a:hover {
