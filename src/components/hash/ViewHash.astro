@@ -3,16 +3,8 @@ import Section from "../Section.astro"
 ---
 <Section class="ViewHash">
     <slot name="nav"></slot>
-    <div id="contentViewHash">
-        <slot name="content"/>
-    </div>
+    <slot name="content"/>
 </Section>
-
-<style>
-    #contentViewHash {
-        overflow: hidden;
-    }
-</style>
 
 <style is:global>
     .ViewHash a {
