@@ -2,11 +2,12 @@
 interface Props {
     id: string;
 	title: string;
+    img?: string;
     description?: string;
     class?: string;
 }
 
-const { title, id } = Astro.props;
+const { title, id, img } = Astro.props;
 let description = Astro.props.description;
 
 if (description.length > 90) {
@@ -14,13 +15,16 @@ if (description.length > 90) {
 }
 ---
 
-<article id={id} class={`${Astro.props.class} `}>
+<article id={id} class={`${Astro.props.class} mb-12`}>
     <div class="">
         <h3 class=" text-start text-3xl font-medium">{title}</h3>
         <span class=" text-slate-800 text-sm font-extralight">{description}</span>
         <hr class=" my-3 border-gray-400">
     </div>
     <div>
+        { img && <img src=`${img} ` alt=`${title}` class=" mx-auto max-h-[320px]"> }
+
         <slot/>
     </div>
+    
 </article>
