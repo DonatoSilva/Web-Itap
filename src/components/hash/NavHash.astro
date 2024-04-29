@@ -1,13 +1,39 @@
 ---
+interface Props {
+    ids: Record<string, string>;
+}
 
+const {ids} = Astro.props;
 ---
-<div class="">
+<div class="navHash">
     <div class="sticky top-2 p-2 w-full bg-[#358d36] rounded-lg fle">
         <p class="text-white text-md font-semibold my-0.5">Opciones:</p>
         <hr>
         <div class="text-black bg-white px-3 py-2 rounded-md mt-2">
-            <slot />
+            {
+                Object.keys(ids).map((id) => (
+                    <a href={`#${ids[id]}`} class={`${ids[id]}`}>{id}</a>
+                ))
+            }
         </div>
     </div>
 </div>
+
+<style>
+    a {
+        display: block;
+        color: black;
+        width: 100%;
+        margin: 3px 0;
+        padding: 5px 0;
+        border-bottom: 0.5px solid #cecece;      
+        transition: border-bottom 300ms ease-in-out;
+    }
+
+    a:hover, .view  {
+        color: #358d36;
+        font-weight: 700;
+        border-bottom: 0.5px solid #358d36;
+    }
+</style>
 

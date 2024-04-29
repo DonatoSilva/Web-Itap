@@ -5,21 +5,3 @@ import Section from "../Section.astro"
     <slot name="nav"></slot>
     <slot name="content"/>
 </Section>
-
-<style is:global>
-    .ViewHash a {
-        display: block;
-        color: black;
-        width: 100%;
-        margin: 3px 0;
-        padding: 5px 0;
-        border-bottom: 0.5px solid #cecece;      
-        transition: border-bottom 300ms ease-in-out;
-    }
-
-    .ViewHash a:hover {
-        color: #358d36;
-        font-weight: 700;
-        border-bottom: 0.5px solid #358d36;
-    }
-</style>

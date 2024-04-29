@@ -3,7 +3,9 @@ import Banner from "../../../components/Banner.astro";
 import Layout from "../../../layouts/Layout.astro";
 import ViewHash from "../../../components/hash/ViewHash.astro";
 import NavHash from "../../../components/hash/NavHash.astro";
-import ArticleHash from "../../../components/hash/ArticleHash.astro";
+import ArticleHash from "../../../components/hash/ArticleHash.jsx";
+
+const idsArticulos ={Bandera: 'BanderaITAP', Escudo: 'Escudo', Musica: 'Musica', Color: 'Color'}
 ---
 
 <Layout
@@ -19,14 +21,9 @@ import ArticleHash from "../../../components/hash/ArticleHash.astro";
         url3="/imagenes/Sede-2.jpg"
     />
     <ViewHash>
-        <NavHash slot="nav">
-            <a href="#BanderaITAP">Bandera</a>
-            <a href="#Hora">Hora</a>
-            <a href="#Musica">Musica</a>
-            <a href="#Color">Color</a>
-        </NavHash>
+        <NavHash ids={idsArticulos} slot="nav" />
         <div slot="content" class="text-black">
-            <ArticleHash id="BanderaITAP" title="Bandera Instituacional" description="Creada en 1987 por juan de lopez ardela buscando mostrar que somos una institucion propia de calidad" img="/imagenes/Sede-2.jpg" class="">
+            <ArticleHash id="BanderaITAP" title="Bandera Instituacional" description="Creada en 1987 por juan de lopez ardela buscando mostrar que somos una institucion propia de calidad" img="/imagenes/Sede-2.jpg" class="" client:only>
                 <p>La bandera del Instituto Técnico Aquileo Parra se describe de la siguiente manera:
 
                     Colores y Significado: La bandera está compuesta por tres franjas horizontales de igual tamaño, con los colores verde, blanco y amarillo.
@@ -37,7 +34,7 @@ import ArticleHash from "../../../components/hash/ArticleHash.astro";
                 </p>
             </ArticleHash>
 
-            <ArticleHash id="Hora" title="Bandera Instituacional" description="Creada en 1987 por juan de lopez ardela buscando mostrar que somos una institucion propia de calidad" img="/imagenes/Sede-2.jpg" class="">
+            <ArticleHash id="Escudo" title="Bandera Instituacional" description="Creada en 1987 por juan de lopez ardela buscando mostrar que somos una institucion propia de calidad" img="/imagenes/Sede-2.jpg" class="" client:only>
                 <p>La bandera del Instituto Técnico Aquileo Parra se describe de la siguiente manera:
 
                     Colores y Significado: La bandera está compuesta por tres franjas horizontales de igual tamaño, con los colores verde, blanco y amarillo.
@@ -48,7 +45,7 @@ import ArticleHash from "../../../components/hash/ArticleHash.astro";
                 </p>
             </ArticleHash>
 
-            <ArticleHash id="Musica" title="Bandera Instituacional" description="Creada en 1987 por juan de lopez ardela buscando mostrar que somos una institucion propia de calidad" img="/imagenes/Sede-2.jpg" class="">
+            <ArticleHash id="Musica" title="Bandera Instituacional" description="Creada en 1987 por juan de lopez ardela buscando mostrar que somos una institucion propia de calidad" img="/imagenes/Sede-2.jpg" class="" client:only>
                 <p>La bandera del Instituto Técnico Aquileo Parra se describe de la siguiente manera:
 
                     Colores y Significado: La bandera está compuesta por tres franjas horizontales de igual tamaño, con los colores verde, blanco y amarillo.
@@ -59,7 +56,7 @@ import ArticleHash from "../../../components/hash/ArticleHash.astro";
                 </p>
             </ArticleHash>
 
-            <ArticleHash id="Color" title="Bandera Instituacional" description="Creada en 1987 por juan de lopez ardela buscando mostrar que somos una institucion propia de calidad" img="/imagenes/Sede-2.jpg" class="">
+            <ArticleHash id="Color" title="Bandera Instituacional" description="Creada en 1987 por juan de lopez ardela buscando mostrar que somos una institucion propia de calidad" img="/imagenes/Sede-2.jpg" class="" client:only>
                 <p>La bandera del Instituto Técnico Aquileo Parra se describe de la siguiente manera:
 
                     Colores y Significado: La bandera está compuesta por tres franjas horizontales de igual tamaño, con los colores verde, blanco y amarillo.
