@@ -1,15 +1,16 @@
 ---
 interface Props {
     ids: Record<string, string>;
+    name: string
 }
 
-const {ids} = Astro.props;
+const {ids, name} = Astro.props;
 ---
 <div class="navHash">
     <div class="sticky top-2 p-2 w-full bg-[#358d36] rounded-lg fle">
-        <p class="text-white text-md font-semibold my-0.5">Opciones:</p>
+        <p class="text-white text-md font-semibold my-0.5">{name}:</p>
         <hr>
-        <div class="text-black bg-white px-3 py-2 rounded-md mt-2">
+        <div class="text-black bg-white px-1.5 py-2 rounded-md mt-2">
             {
                 Object.keys(ids).map((id) => (
                     <a href={`#${ids[id]}`} class={`${ids[id]}`}>{id}</a>
@@ -25,15 +26,29 @@ const {ids} = Astro.props;
         color: black;
         width: 100%;
         margin: 3px 0;
-        padding: 5px 0;
+        padding: 5px 6px;
         border-bottom: 0.5px solid #cecece;      
-        transition: border-bottom 300ms ease-in-out;
+        transition: font-weight 300ms ease-in-out, border-radius 300ms ease-in-out, color 300ms ease-in-out, background-color 300ms ease-in-out, border-bottom 300ms ease-in-out;
     }
 
-    a:hover, .view  {
-        color: #358d36;
+    a:hover {
+        color: #e59547;
         font-weight: 700;
-        border-bottom: 0.5px solid #358d36;
+        border-bottom: 0.5px solid #e59547;
+    }
+
+    a.view:hover {
+        background-color: #e59547;
+        border-bottom: 0px;
+        color: #fff;
+        border-radius: 6px;
+    }
+
+    .view {
+        background-color: #e59547;
+        border-bottom: 0px;
+        color: #fff;
+        border-radius: 6px;
     }
 </style>
 
