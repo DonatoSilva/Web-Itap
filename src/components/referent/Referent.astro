@@ -18,6 +18,38 @@ import BottonDespla from "../bottons/BottonDespla.astro";
         <slot />
     </div>
 </article>
+<script>
+    const gap = 16;
+    const bottons = document.querySelectorAll(".BottonDespla");
+    const carousel = document.querySelector(".scroller");
+    const itemReferent = document.querySelector(".item");
+
+    const widthItem = itemReferent.clientWidth + gap;
+
+    bottons.forEach((btn) => {
+        const isClass = btn.classList.contains("rotate-180");
+        const width = widthItem * 2;
+
+        btn.addEventListener("click", () => {
+            if (isClass) {
+                carousel.scrollBy(widthItem, 0);
+
+                if (
+                    carousel.scrollWidth - width <=
+                    carousel.scrollLeft + width
+                ) {
+                    carousel.scrollLeft = 0;
+                }
+            } else {
+                carousel.scrollLeft = carousel.scrollWidth - widthItem;
+
+                if (!(widthItem >= carousel.scrollLeft + widthItem)) {
+                    carousel.scrollBy(-widthItem, 0);
+                }
+            }
+        });
+    });
+</script>
 <style>
     .scroller {
         display: grid;

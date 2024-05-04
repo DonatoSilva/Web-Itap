@@ -7,13 +7,15 @@ function articleHash({ id, title, img, description, class: customClass, children
   }
 
   const idRef = useRef(id).current;
-  
+
   const navHash = document.querySelector('.navHash');
   const navAHash = navHash.querySelector(`.${idRef}`);
 
   useEffect(() => {
     function isElementVisible(elementId) {
       const element = document.getElementById(elementId);
+
+
       if (!element) return false;
 
       const rect = element.getBoundingClientRect();

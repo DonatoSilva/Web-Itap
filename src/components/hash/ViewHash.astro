@@ -1,7 +1,61 @@
 ---
-import Section from "../Section.astro"
+import Section from "../Section.astro";
+import BottonDespla from "../bottons/BottonDespla.astro";
 ---
+
 <Section class="ViewHash">
-    <slot name="nav"></slot>
-    <slot name="content"/>
+    <slot name="nav" />
+    <div class="flex-col justify-items-end items-end">
+        <slot name="content" />
+        <input type="hidden" name="" />
+        <div class="w-full sticky bottom-2 flex justify-end">
+            <BottonDespla title="Anterior" />
+            <BottonDespla direction="right" title="Siguiente" />
+        </div>
+    </div>
+    <script>
+        const bottons = document.querySelectorAll(".BottonDespla");
+        const navHash = document.querySelector(".navHash");
+
+        let validate = false;
+        let hrefArticle = [];
+        let indexArticle = hrefArticle.indexOf(getArticleView);
+
+        function getArticlesID() {
+            if (!validate) {
+                const articles = document.querySelectorAll("article");
+
+                articles.forEach((article) => {
+                    hrefArticle.push(article.id);
+                });
+
+                validate = true
+            }
+        }
+
+        function getArticleView() {
+            const article = navHash.querySelector(".view");
+            return article.classList[0];
+        }
+
+        bottons.forEach((btn) => {
+            const isClass = btn.classList.contains("rotate-180");
+            btn.addEventListener("click", () => {
+                getArticlesID();
+
+                const actualArticleID = getArticleView();
+                indexArticle = hrefArticle.indexOf(actualArticleID);
+
+                if (isClass) {
+                    if(indexArticle < (hrefArticle.length - 1)){
+                        location.href = `#${hrefArticle[indexArticle + 1]}`;
+                    }
+                } else {
+                    if(indexArticle > 0){
+                        location.href = `#${hrefArticle[indexArticle - 1]}`;
+                    }
+                }
+            });
+        });
+    </script>
 </Section>
