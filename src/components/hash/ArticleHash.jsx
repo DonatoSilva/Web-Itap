@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function articleHash({ id, title, img, description, class: customClass, children }) {
+function articleHash({ id, title, img = null, description, class: customClass, children }) {
   let truncatedDescription = description;
   if (description.length > 90) {
     truncatedDescription = description.slice(0, 90) + '...';
@@ -8,13 +8,30 @@ function articleHash({ id, title, img, description, class: customClass, children
 
   const idRef = useRef(id).current;
 
+  const bottons = document.querySelectorAll(".BottonDespla");
+  let nextBtn;
+  let prevBtn;
+
+  bottons.forEach((btn) => {
+    const isClass = btn.classList.contains("rotate-180");
+
+    if (isClass) {
+      nextBtn = btn;
+    } else {
+      prevBtn = btn;
+    }
+  })
+
   const navHash = document.querySelector('.navHash');
+  const navAs = navHash.querySelectorAll('a');
   const navAHash = navHash.querySelector(`.${idRef}`);
 
+  const floatTitle = document.getElementById('floating')
+
   useEffect(() => {
+
     function isElementVisible(elementId) {
       const element = document.getElementById(elementId);
-
 
       if (!element) return false;
 
@@ -22,14 +39,28 @@ function articleHash({ id, title, img, description, class: customClass, children
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
       const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
 
-      return visibleHeight / rect.height >= 0.25;
+      return visibleHeight / rect.height >= 0.30;
+    }
+
+    function toggetherNoMore(btn, border) {
+      if (navAHash.getAttribute('href') === border.getAttribute('href')) btn.classList.add('noMore');
+
+      if (navAHash.getAttribute('href') !== border.getAttribute('href') && btn.classList.contains('noMore')) btn.classList.remove('noMore');
     }
 
     function verification() {
+      const last = navAs[navAs.length - 1];
+      const first = navAs[0];
+
       if (isElementVisible(id)) {
-        navAHash.classList.add('view')
+        navAHash.classList.add('view');
+        floatTitle.textContent = navAHash.textContent;
+        toggetherNoMore(nextBtn, last);
+        toggetherNoMore(prevBtn, first);
       } else {
-        navAHash.classList.remove('view')
+        if (navAHash.classList.contains('view')) {
+          navAHash.classList.remove('view')
+        }
       }
     }
 

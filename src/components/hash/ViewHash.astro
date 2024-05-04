@@ -7,8 +7,10 @@ import BottonDespla from "../bottons/BottonDespla.astro";
     <slot name="nav" />
     <div class="flex-col justify-items-end items-end">
         <slot name="content" />
-        <input type="hidden" name="" />
         <div class="w-full sticky bottom-2 flex justify-end">
+            <div class="md:hidden h-full bg-white text-center py-2 px-3 rounded-md my-auto me-4 border-[#e59547] border">
+                <h4 id="floating" class=" font-semibold text-sm text-[#e59547]">.....</h4>
+            </div>
             <BottonDespla title="Anterior" />
             <BottonDespla direction="right" title="Siguiente" />
         </div>
