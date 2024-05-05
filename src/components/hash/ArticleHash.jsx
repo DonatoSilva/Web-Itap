@@ -79,7 +79,7 @@ function articleHash({ id, title, img = null, description, class: customClass, c
         <hr className="my-3 border-gray-400" />
       </div>
       <div>
-        {img && <img src={img} alt={title} className="mx-auto max-h-[320px]" />}
+        {img && <img src={'/Web-Itap'+img} alt={title} className="mx-auto max-h-[320px]" />}
         {children}
       </div>
     </article>

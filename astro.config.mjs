@@ -7,5 +7,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   site: 'https://DonatoSilva.github.io/',
-  base: '/Web-Itap/',
+  base: '/Web-Itap',
 });
