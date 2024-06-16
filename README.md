@@ -12,7 +12,7 @@ Este proyecto se desarrollo con el proposito de praticar y desarrollar una nuevo
 
 ## Tecnologias y librerias que se utilizaron:
 
-- React
+- Astro
 - Css
 - tailwind
 - JavaScritp
